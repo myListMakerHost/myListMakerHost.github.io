@@ -28,9 +28,8 @@
   vertical-align: middle;
 }
 #container {
-  margin-top:-1px;
   text-align: left;
-  border: 1px solid black;
+  
 }
 
 .btn-gradient.red{ 
@@ -65,18 +64,13 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1bbcc2', endColorstr='#18a3a8', GradientType=0);
 }
 
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  text-align: right;
-  padding: 3px;
+
+#upArrow{
+  background-color: transparent; 
+  border: 0ch; 
+  margin-top: 5px;
 }
-.up {
-  transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-}
-.down {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+#downArrow{
+  background-color: transparent; 
+  border: 0ch;
 }

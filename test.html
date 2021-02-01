@@ -1,9 +1,14 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="list.css">
+    <link rel="stylesheet" type="text/css" href="https://mylistmakerhost.github.io/list.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+            <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
   </head><body>
-    <script src="https://kit.fontawesome.com/baefe1cc3c.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">    
     <div style="text-align: center;"> 
       <h1 id="listTitle">t1</h1>     
       <input id="searchBar" type="text" placeholder="Search.."> 
@@ -19,13 +24,51 @@
    <br> 
    <hr> 
    <br>  
-   <table id="userList">  
+   <table id="userList" style="background-color: black;">  
      <tbody> 
        <tr> 
          <th>Rank</th> 
          <th> Title</th> 
         </tr>     
       </tbody> 
-      </table>
+      <tr>
+        <td>
+          <h1 style="text-align: center;">1</h1>
+        </td>
+        <td style="width: 100%;">
+          <div style="background-color: rgb(180, 180, 203);">
+            <img src="https://image.tmdb.org/t/p/w92/rYBaXgvTKFS8iZC7Wr8SMomSauQ.jpg" class="center-img">
+            <div class="center-txt"><h2>Bee Movie</h2>
+              <button class="btn btn-outline-danger">remove</button>
+              <p>
+              <button id="upArrow">
+                <i class="fas fa-arrow-up"></i>              </button>
+            </p>
+            <p>
+              <button id="downArrow"><i class="fas fa-arrow-down"></i></button>
+            </p>   
+            </div>
+
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h1 style="text-align: center;">2</h1>
+        </td>
+        <td style="width: 100%;">
+        <div style="background-color: rgb(225, 225, 234);">
+          <img src="https://image.tmdb.org/t/p/w92/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg" class="center-img">
+          <div class="center-txt">
+            <h2>Toy Story</h2>
+            <button class="btn btn-outline-danger">remove</button>
+            <p id="arrOffset">
+              <i class="fas fa-arrow-up"></i>
+            </p>
+            <p id="arrOffset">
+              <button id="downArrow"><i class="arrow down"></i></button>
+            </p>
+          </div>
+        </div>
   </body>
     </html>

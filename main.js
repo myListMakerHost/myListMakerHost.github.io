@@ -250,6 +250,12 @@ function loadPage(htmlTitle, listEntries){
                     a.textContent = movieTitle;
                     a.setAttribute('href','#');
                     let listItem = mySubWindow.document.createElement("li")
+                    let listImg = mySubWindow.document.createElement("img")
+                    listImg.src = basePosterURL + "w92" + posterURL
+                    listImg.style.paddingLeft ="10px"
+                    if (posterURL != null){
+                        a.appendChild(listImg)
+                    }
                     listItem.appendChild(a);
 
                     listItem.onclick = function() {
@@ -258,23 +264,22 @@ function loadPage(htmlTitle, listEntries){
                         
                         let d = mySubWindow.document.createElement("div");
                         d.id = "container";
+                        var bgColor = "#e1e1ea"
+                        var curPosterURL = null
 
-                        if (posterURL != "null"){
-                            
-                            let curPosterURL = movieTitleURLS[movieTitle + movieId]
-
-                            if ( totalEntryCount % 2 == 0){
-                                let bgColor = "#b4b4cb"
-                                createEntry(htmlTitle, movieTitle, curPosterURL, movieId, bgColor);
-                            }else{
-                                let bgColor = "#e1e1ea"
-                                createEntry(htmlTitle, movieTitle, curPosterURL, movieId, bgColor);
-                            }
-                            totalEntryCount++;
-                            let newInfo = JSON.parse(window.localStorage.getItem(htmlTitle));
-                            newInfo.entries.push(a.textContent + "-:" + movieId + "-:" + curPosterURL)
-                            window.localStorage.setItem(htmlTitle,JSON.stringify(newInfo))
+                        if ( totalEntryCount % 2 == 0){
+                            bgColor = "#b4b4cb"
                         }
+                        if (posterURL != null){
+                            curPosterURL = movieTitleURLS[movieTitle + movieId]
+                        }
+                        createEntry(htmlTitle, movieTitle, curPosterURL, movieId, bgColor);
+                        let newInfo = JSON.parse(window.localStorage.getItem(htmlTitle));
+                        newInfo.entries.push(a.textContent + "-:" + movieId + "-:" + curPosterURL)
+                        window.localStorage.setItem(htmlTitle,JSON.stringify(newInfo))
+
+                        totalEntryCount++;
+
                     }
                     suggestionList.appendChild(listItem);
                 }
@@ -315,7 +320,11 @@ function createEntry(listTitle, entryName, urlStr, entryID, backGroundColor){
     let userList = mySubWindow.document.getElementById("userList");
     entry.id = "container";
     let entryImage = mySubWindow.document.createElement("img");
-    entryImage.src = basePosterURL + "w92" + urlStr;
+    if (urlStr == null || urlStr == "null") {
+        entryImage.src = "https://i.imgur.com/wiUoT13.png"
+    }else{
+        entryImage.src = basePosterURL + "w92" + urlStr;
+    }
     entryImage.className = "center-img";
     entry.appendChild(entryImage);
     
